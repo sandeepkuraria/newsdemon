@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 
-export class News extends Component {
+export default class News extends Component {
   articles = [
     {
       source: { id: "bbc-news", name: "BBC News" },
@@ -86,38 +86,28 @@ export class News extends Component {
   constructor() {
     super();
     console.log("Hello I am a constructor from news component.");
-    this.state = { articles: this.articles };
+    this.state = { articles: this.articles, loading: false };
   }
   render() {
     return (
       <div className="container my-3">
         <h2>NewsDemon - Top Headlines</h2>
+
         <div className="row">
-          <div className="col md 4">
-            <NewsItem
-              title="My title"
-              description="This is the description"
-              imageUrl="https://ichef.bbci.co.uk/news/1024/branded_news/116AC/production/_130304317_p0fz7vg4.jpg"
-            />
-          </div>
-          <div className="col md 4">
-            <NewsItem
-              title="My title"
-              description="This is the description"
-              imageUrl=""
-            />
-          </div>
-          <div className="col md 4">
-            <NewsItem
-              title="My title"
-              description="This is the description"
-              imageUrl=""
-            />
-          </div>
+          {this.state.articles.map((element) => {
+            return (
+              <div className="col md 4" key={element.url}>
+                <NewsItem
+                  title={element.title.slice(0, 40)}
+                  description={element.description.slice(0, 64)}
+                  imageUrl={element.urlToImage}
+                  newsUrl={element.url}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     );
   }
 }
-
-export default News;
