@@ -89,7 +89,7 @@ export default class News extends Component {
 
     return (
       <div className="container my-3">
-        <h2 className="text-center">NewsDemon - Top Headlines</h2>
+        <h2 className="text-center ">NewsDemon - Top Headlines</h2>
         {this.state.loading && <Spinner />}
         <div className="row">
           {!this.state.loading &&
@@ -106,6 +106,9 @@ export default class News extends Component {
                       : ""
                   }
                   newsUrl={element.url}
+                  author={element.author}
+                  date={element.publishedAt}
+                  source={element.source.name}
                 />
               </div>
             ))}

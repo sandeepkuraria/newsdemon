@@ -14,14 +14,14 @@ export default class App extends Component {
           <Routes>
             <Route
               path="/"
-              element={<News pageSize={12} country="in" category="general" />}
+              element={<News pageSize={6} country="in" category="general" />}
             />
           </Routes>
 
           <Routes>
             <Route
               path="/business"
-              element={<News pageSize={12} country="in" category="business" />}
+              element={<News pageSize={6} country="in" category="business" />}
             />
           </Routes>
 
@@ -29,40 +29,38 @@ export default class App extends Component {
             <Route
               path="/entertainment"
               element={
-                <News pageSize={12} country="in" category="entertainment" />
+                <News pageSize={6} country="in" category="entertainment" />
               }
             />
           </Routes>
           <Routes>
             <Route
               path="/general"
-              element={<News pageSize={12} country="in" category="general" />}
+              element={<News pageSize={6} country="in" category="general" />}
             />
           </Routes>
           <Routes>
             <Route
               path="/health"
-              element={<News pageSize={12} country="in" category="health" />}
+              element={<News pageSize={6} country="in" category="health" />}
             />
           </Routes>
           <Routes>
             <Route
               path="/science"
-              element={<News pageSize={12} country="in" category="science" />}
+              element={<News pageSize={6} country="in" category="science" />}
             />
           </Routes>
           <Routes>
             <Route
               path="/sports"
-              element={<News pageSize={12} country="in" category="sports" />}
+              element={<News pageSize={6} country="in" category="sports" />}
             />
           </Routes>
           <Routes>
             <Route
               path="/technology"
-              element={
-                <News pageSize={12} country="in" category="technology" />
-              }
+              element={<News pageSize={6} country="in" category="technology" />}
             />
           </Routes>
         </Router>
